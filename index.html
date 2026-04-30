@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="header-div flex flex-direction-row">
+        <div id="header-div" class="header-div flex flex-direction-row">
           <img
             src="images/header/site-logo.svg"
             alt="tesla-logo"
@@ -46,9 +46,10 @@
             </div>
           </div>
         </div>
-        <div class="header-dropdown-div">
-          <div class="dropdown-container flex-direction-row">
-            <div class="dropdown-image-container vehicles">
+
+        <div id="dropdown" class="header-dropdown-div">
+          <div id="container" class="dropdown-container flex-direction-row">
+            <div id="vehicles" class="dropdown-image-container vehicles">
               <div class="dropdown-image-container-child">
                 <img
                   src="images/header/dropdown/image 9.svg"
@@ -307,7 +308,7 @@
               </div>
             </div>
             <img src="images/header/dropdown/divider.svg" alt="" />
-            <div class="dropdown-subcategory-div vehicles">
+            <div id="vehicles-sub" class="dropdown-subcategory-div vehicles">
               <p class="dropdown-subcategory-text">Inventory</p>
               <p class="dropdown-subcategory-text">Used Cars</p>
               <p class="dropdown-subcategory-text">Demo Drive</p>
@@ -319,26 +320,21 @@
               <p class="dropdown-subcategory-text">Roadster</p>
             </div>
             <div class="dropdown-subcategory-div energy">
-              <p class="dropdown-subcategory-text">Inventory</p>
-              <p class="dropdown-subcategory-text">Used Cars</p>
-              <p class="dropdown-subcategory-text">Demo Drive</p>
-              <p class="dropdown-subcategory-text">Trade-in</p>
+              <p class="dropdown-subcategory-text">Scheadule a Consultation</p>
+              <p class="dropdown-subcategory-text">Why Solar</p>
+              <p class="dropdown-subcategory-text">Incentives</p>
+              <p class="dropdown-subcategory-text">Support</p>
               <p class="dropdown-subcategory-text">Compare</p>
-              <p class="dropdown-subcategory-text">Help Me Charge</p>
-              <p class="dropdown-subcategory-text">Fleet</p>
-              <p class="dropdown-subcategory-text">Semi</p>
-              <p class="dropdown-subcategory-text">Roadster</p>
+              <p class="dropdown-subcategory-text">Partner with Tesla</p>
+              <p class="dropdown-subcategory-text">Commercial</p>
+              <p class="dropdown-subcategory-text">Utilities</p>
             </div>
             <div class="dropdown-subcategory-div charging">
-              <p class="dropdown-subcategory-text">Inventory</p>
-              <p class="dropdown-subcategory-text">Used Cars</p>
-              <p class="dropdown-subcategory-text">Demo Drive</p>
-              <p class="dropdown-subcategory-text">Trade-in</p>
-              <p class="dropdown-subcategory-text">Compare</p>
               <p class="dropdown-subcategory-text">Help Me Charge</p>
-              <p class="dropdown-subcategory-text">Fleet</p>
-              <p class="dropdown-subcategory-text">Semi</p>
-              <p class="dropdown-subcategory-text">Roadster</p>
+              <p class="dropdown-subcategory-text">Charging Calculator</p>
+              <p class="dropdown-subcategory-text">Charging With NACS</p>
+              <p class="dropdown-subcategory-text">Supercharger Voting</p>
+              <p class="dropdown-subcategory-text">Host a Supercharger</p>
             </div>
           </div>
         </div>
@@ -680,5 +676,25 @@
         </div>
       </section>
     </main>
+    <script>
+      const vehicleButton = document.getElementById("vehicles-button");
+      const vehicleDiv = document.getElementById("vehicles");
+      const vehicleSub = document.getElementById('vehicles-sub');
+      const headerDropdownDiv = document.getElementById("dropdown");
+      const dropdownContainer = document.getElementById("container");
+      const headerDiv = document.getElementById("header-div");
+      const header = document.querySelector("header");
+
+      vehicleButton.addEventListener("mouseenter", () => {
+        headerDiv.style.backgroundColor = "white";
+        headerDropdownDiv.style.display = "flex";
+        dropdownContainer.style.display = "flex";
+        vehicleDiv.style.display = "flex";
+      });
+      header.addEventListener("mouseleave", () => {
+        headerDropdownDiv.style.display = "none";
+        headerDiv.style.backgroundColor = "rgba(0, 0, 0, 0.201)";
+      });
+    </script>
   </body>
 </html>

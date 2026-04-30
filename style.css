@@ -65,9 +65,12 @@ body {
   width: 100vw;
   justify-content: space-between;
 }
-.header-container:has(.nav-button:hover) .header-div {
+/* .header-container:has(.nav-button:hover) .header-div {
   background-color: white;
-}
+} */
+/* .header-div:hover {
+  background-color: white;
+} */
 .header-container:has(.nav-button:hover) .nav-div {
   color: black !important;
 }
@@ -88,15 +91,15 @@ body {
 .nav-button:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.header-container:has(.nav-button:hover) .header-dropdown-div {
-  display: flex;
-}
+/* .header-container:has(.nav-button:hover) .header-dropdown-div { */
+/* display: flex; */
+/* } */
 /* Energy  */
 .header-container:has(#energy-button:hover) .dropdown-image-container.energy,
 .header-container:has(#energy-button:hover) .dropdown-subcategory-div.energy,
 /* Vehicles  */
-.header-container:has(#vehicles-button:hover) .dropdown-image-container.vehicles,
-.header-container:has(#vehicles-button:hover) .dropdown-subcategory-div.vehicles,
+/* .header-container:has(#vehicles-button:hover) .dropdown-image-container.vehicles, */
+/* .header-container:has(#vehicles-button:hover) .dropdown-subcategory-div.vehicles, */
 /* Charging  */
 .header-container:has(#charging-button:hover) .dropdown-image-container.charging,
 .header-container:has(#charging-button:hover) .dropdown-subcategory-div.charging,
