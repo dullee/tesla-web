@@ -22,7 +22,6 @@
     gap: 0 !important;
   }
 }
-
 * {
   margin: 0px;
   padding: 0px;
@@ -71,12 +70,12 @@ body {
 /* .header-div:hover {
   background-color: white;
 } */
-.header-container:has(.nav-button:hover) .nav-div {
-  color: black !important;
-}
-.header-container:has(.nav-button:hover) .header-images {
-  filter: invert(100%);
-}
+/* .header-container:has(.nav-button:hover) .nav-div { */
+/* color: black !important; */
+/* } */
+/* .header-container:has(.nav-button:hover) .header-images { */
+/* filter: invert(100%); */
+/* } */
 .header-image-div {
   display: flex;
   padding: 4px;

@@ -679,21 +679,37 @@
     <script>
       const vehicleButton = document.getElementById("vehicles-button");
       const vehicleDiv = document.getElementById("vehicles");
-      const vehicleSub = document.getElementById('vehicles-sub');
+      const vehicleSub = document.getElementById("vehicles-sub");
       const headerDropdownDiv = document.getElementById("dropdown");
       const dropdownContainer = document.getElementById("container");
       const headerDiv = document.getElementById("header-div");
       const header = document.querySelector("header");
+      const navButtons = document.querySelectorAll(".nav-button");
+      const navDiv = document.querySelector(".nav-div");
+      const headerImgs = document.querySelectorAll(".header-images");
+
+      navButtons.forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+          headerImgs.forEach((element) => {
+            element.style.filter = "invert(100%)";
+          });
+          navDiv.style.color = "black";
+          headerDiv.style.backgroundColor = "white";
+          headerDropdownDiv.style.display = "flex";
+          dropdownContainer.style.display = "flex";
+        });
+      });
 
       vehicleButton.addEventListener("mouseenter", () => {
-        headerDiv.style.backgroundColor = "white";
-        headerDropdownDiv.style.display = "flex";
-        dropdownContainer.style.display = "flex";
         vehicleDiv.style.display = "flex";
       });
       header.addEventListener("mouseleave", () => {
+        headerImgs.forEach((element) => {
+          element.style.filter = "invert(0%)";
+        });
         headerDropdownDiv.style.display = "none";
         headerDiv.style.backgroundColor = "rgba(0, 0, 0, 0.201)";
+        navDiv.style.color = "white";
       });
     </script>
   </body>
