@@ -54,7 +54,7 @@ body {
 .header-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: auto;
   position: fixed;
   z-index: 10;
 }
@@ -64,18 +64,41 @@ body {
   width: 100vw;
   justify-content: space-between;
 }
-/* .header-container:has(.nav-button:hover) .header-div {
+.nav-div:has(.nav-button:hover) .nav-button {
+  color: black;
+}
+.header-container:has(.nav-button:hover) .header-div {
+  background-color: white !important;
+}
+.header-container:has(.nav-button:hover) .header-images {
+  filter: invert(1) !important;
+}
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.nav-button:hover .dropdown-area {
+  display: flex;
+}
+.dropdown-area {
+  border: 1px solid red;
+  padding-top: 56px;
+  z-index: 5;
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.dropdown-con {
+  display: flex;
+  flex-direction: row;
   background-color: white;
-} */
-/* .header-div:hover {
-  background-color: white;
-} */
-/* .header-container:has(.nav-button:hover) .nav-div { */
-/* color: black !important; */
-/* } */
-/* .header-container:has(.nav-button:hover) .header-images { */
-/* filter: invert(100%); */
-/* } */
+  padding-top: 64px !important;
+  gap: 63px;
+  padding: 0 60px;
+  padding-bottom: 64px;
+  width: 100%;
+}
 .header-image-div {
   display: flex;
   padding: 4px;
@@ -86,25 +109,6 @@ body {
 .header-image-div:hover {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
-}
-.nav-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-/* .header-container:has(.nav-button:hover) .header-dropdown-div { */
-/* display: flex; */
-/* } */
-/* Energy  */
-.header-container:has(#energy-button:hover) .dropdown-image-container.energy,
-.header-container:has(#energy-button:hover) .dropdown-subcategory-div.energy,
-/* Vehicles  */
-/* .header-container:has(#vehicles-button:hover) .dropdown-image-container.vehicles, */
-/* .header-container:has(#vehicles-button:hover) .dropdown-subcategory-div.vehicles, */
-/* Charging  */
-.header-container:has(#charging-button:hover) .dropdown-image-container.charging,
-.header-container:has(#charging-button:hover) .dropdown-subcategory-div.charging,
-/* Shop  */
-.header-container:has(#shop-button:hover) .dropdown-image-container.shop {
-  display: flex !important;
 }
 .header-dropdown-div {
   display: none;
@@ -121,19 +125,22 @@ body {
   gap: 63px;
 }
 .dropdown-image-container {
-  display: none;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto auto;
   gap: 16px;
   padding-left: 150px;
   max-width: 1050px;
-  flex-wrap: wrap;
 }
 .dropdown-image-container-child {
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 250px;
   gap: 8px;
 }
 .dropdown-car-img {
+  margin: 0px 15px;
   max-width: 220px !important;
 }
 .dropdown-img-text-div {
@@ -159,7 +166,7 @@ body {
   text-decoration: underline;
 }
 .dropdown-subcategory-div {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 12px;
   margin: 8px 0;
@@ -180,11 +187,14 @@ body {
   padding: 12px 0;
 }
 .nav-button {
+  pointer-events: all;
   border-radius: 4px;
   padding: 6px 16px;
   font-weight: bold;
+  z-index: 15;
 }
 .nav-div {
+  z-index: 10;
   padding: 8px 12px;
 }
 .main {
